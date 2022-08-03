@@ -1,4 +1,4 @@
-const NUMBER = 6
+const NUMBER = 24
 
 multipliTable(NUMBER)
 
