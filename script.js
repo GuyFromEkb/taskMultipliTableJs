@@ -31,13 +31,13 @@ function multipliTable(numb) {
 	}
 }
 
-function printNumb(rowNumb, tableNum, numb) {
-	return " ".repeat(getLength(rowNumb, tableNum, numb)) + rowNumb * tableNum
+function printNumb(rowNumb, tableNumb, numb) {
+	return " ".repeat(getLength(rowNumb, tableNumb, numb)) + rowNumb * tableNumb
 }
 
-function getLength(rowNumb, tableNum, numb) {
-	const lengthTable = (rowNumb * tableNum).toString().length
-	const maxLengthTable = (tableNum * numb).toString().length
+function getLength(rowNumb, tableNumb, numb) {
+	const lengthTable = (rowNumb * tableNumb).toString().length
+	const maxLengthTable = (tableNumb * numb).toString().length
 
 	return maxLengthTable - lengthTable
 }
