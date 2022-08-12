@@ -1,22 +1,10 @@
-/* 
-const balls = [1, 1, 2, 1]
-const bag = 2                               //mustBeAnsw : [ 1, 0, 1, 0 ]
-*/
-/* const balls = [100, 300, 200]
-const bag = 3     */                        //mustBeAnsw : [ 0, 2, 1 ]
-/*
-const balls = [100, 300, 200]
-const bag = 120                             //mustBeAnsw : [20, 60, 40]
-*/
-/*
-const ballsF = [100, 300, 200, 700, 140]
-const bag = 0                               //mustBeAnsw : 0
-*/
-const balls = [0, 0, 2]
-const bag = 3                               //mustBeAnsw : [0, 0, 2]
-
-const answ = calcBalls(balls, bag)
-console.log(answ)
+console.log(calcBalls([10, 10, 10], 100))               //mustBeAnsw : [ 10, 10, 10]
+console.log(calcBalls([1, 1, 2, 1], 2))                 //mustBeAnsw : [ 1, 0, 1, 0 ]
+console.log(calcBalls([100, 300, 200], 3))              //mustBeAnsw : [ 0, 2, 1 ]
+console.log(calcBalls([100, 300, 200], 120))            //mustBeAnsw : [20, 60, 40]
+console.log(calcBalls([100, 300, 200, 700, 140], 0))    //mustBeAnsw : 0
+console.log(calcBalls([0,0,0], 0))                      //mustBeAnsw : 0
+console.log(calcBalls([0, 0, 2], 3))                    //mustBeAnsw : [0, 0, 2]
 
 function calcBalls(arrBalls, maxWeight) {
 
@@ -47,21 +35,30 @@ function calcBalls(arrBalls, maxWeight) {
         return Math.round(maxWeight * procent / 100)
     })
 
-    if (totalLoot < maxWeight && ballsSum > bag) {
+    if (totalLoot < maxWeight && ballsSum > maxWeight) {
         // доложить шары, если есть место
-        addBallToZero(ballsTheifBag, maxWeight, totalLoot)
+        addBallToZero(ballsTheifBag,ballsProcent, maxWeight, totalLoot)
     }
 
     return ballsTheifBag
 }
 
-function addBallToZero(ballsTheifBag, maxWeight, totalLoot) {
+function addBallToZero(ballsTheifBag, ballsProcent, maxWeight, totalLoot,) {
 
     for (let i = 0; i < ballsTheifBag.length && maxWeight - totalLoot !== 0; i++) {
 
         if (ballsTheifBag[i] === 0) {
             ballsTheifBag[i] = 1
-            totalLoot += 1
+            totalLoot++
+
+            continue
+        }
+        const buffProcent = Math.round(ballsProcent[i])
+        const buffBall = Math.round(maxWeight * buffProcent / 100)
+
+        if (buffBall - ballsTheifBag[i] === 1) {
+            ballsTheifBag[i] = buffBall
+            totalLoot++
         }
     }
 }
