@@ -35,7 +35,7 @@ function calcBalls(arrBalls, maxWeight) {
 		return Math.round(maxWeight * procent / 100)
 	})
 
-	if (totalLoot < maxWeight && ballsSum > maxWeight) {
+	if (totalLoot < maxWeight) {
 		// доложить шары, если есть место
 		addBallToZero(ballsTheifBag, ballsProcent, maxWeight, totalLoot)
 	}
