@@ -1,5 +1,5 @@
 console.log(calcBalls([100, 300, 200], 120))                //mustBeAnsw : [20, 60, 40]
-console.log(calcBalls([1, 2, 1, 1], 1))                     //mustBeAnsw : [10, 1, 0, 0]
+console.log(calcBalls([1, 2, 1, 1], 1))                     //mustBeAnsw : [0, 1, 0, 0]
 console.log(calcBalls([10, 10, 10], 100))                   //mustBeAnsw : [10, 10, 10]
 console.log(calcBalls([1, 1, 2, 1], 2))                     //mustBeAnsw : [1, 0, 1, 0]
 console.log(calcBalls([100, 300, 200], 3))                  //mustBeAnsw : [0, 2, 1]
