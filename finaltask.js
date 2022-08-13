@@ -5,7 +5,7 @@ console.log(calcBalls([1, 1, 2, 1], 2))                 //mustBeAnsw : [ 1, 0, 1
 console.log(calcBalls([100, 300, 200], 3))              //mustBeAnsw : [ 0, 2, 1 ]
 console.log(calcBalls([100, 300, 200, 700, 140], 0))    //mustBeAnsw : 0
 console.log(calcBalls(0, 25))                           //mustBeAnsw : 0
-console.log(calcBalls([1, 1, 7], 3))                    //mustBeAnsw : [ 0, 0, 2 ]
+console.log(calcBalls([1, 1, 7], 3))                    //mustBeAnsw : [ 0, 0, 3 ]
 console.log(calcBalls([1, 1, 4], 3))                    //mustBeAnsw : [ 1, 0, 2 ]
 
 
