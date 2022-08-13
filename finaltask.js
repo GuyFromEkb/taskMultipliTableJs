@@ -6,6 +6,8 @@ console.log(calcBalls([100, 300, 200], 3))              //mustBeAnsw : [ 0, 2, 1
 console.log(calcBalls([100, 300, 200, 700, 140], 0))    //mustBeAnsw : 0
 console.log(calcBalls([0, 0, 0], 0))                    //mustBeAnsw : 0
 console.log(calcBalls([0, 0, 2], 3))                    //mustBeAnsw : [ 0, 0, 2 ]
+console.log(calcBalls([1, 1, 4], 3))                    //mustBeAnsw : [ 1, 0, 2 ]
+
 
 function calcBalls(arrBalls, maxWeight) {
     // проверка на нули в условии
@@ -42,7 +44,13 @@ function calcBalls(arrBalls, maxWeight) {
 }
 
 function addBallsToBag(ballsTheifBag, ballsProcent, maxWeight, totalLoot,) {
-    const buffArrWithClearProcent = ballsProcent.map(item => maxWeight * item / 100)
+    const buffArrWithClearProcent = ballsProcent.map(item => {
+        const numb = maxWeight * item / 100
+
+        return (numb % 1 === 0) ? 0 : numb
+    })
+
+
 
     while (maxWeight - totalLoot !== 0) {
         const indexMostProcent = buffArrWithClearProcent.indexOf(Math.max(...buffArrWithClearProcent))
